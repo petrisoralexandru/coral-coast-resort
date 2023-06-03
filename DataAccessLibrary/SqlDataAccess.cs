@@ -20,16 +20,16 @@ public class SqlDataAccess
     /// <param name="sql">SQL query written as a string</param>
     /// <param name="parameters">Parameters for performing a parameterized query</param>
     /// <param name="connectionStringName">String indicating database connection details</param>
-    /// <param name="options">Parameter specifying whether to execute a query as a stored procedure</param>
+    /// <param name="isStoredProcedure">Parameter specifying whether to execute a stored procedure</param>
     /// <typeparam name="T">The class model to be queried</typeparam>
     /// <typeparam name="U">Parameter(s) specified to transmit parameterized into query</typeparam>
     /// <returns>One or more database rows transformed as objects</returns>
-    public List<T> LoadData<T, U>(string sql, U parameters, string connectionStringName, dynamic? options = null)
+    public List<T> LoadData<T, U>(string sql, U parameters, string connectionStringName, bool isStoredProcedure = false)
     {
         string? connectionString = _config.GetConnectionString(connectionStringName);
         CommandType commandType = CommandType.Text;
 
-        if (options?.IsStoredProcedure != null && options?.IsStoredProcedure == true)
+        if (isStoredProcedure)
         {
             commandType = CommandType.StoredProcedure;
         }
@@ -47,14 +47,14 @@ public class SqlDataAccess
     /// <param name="sql">SQL query written as a string</param>
     /// <param name="parameters">Parameters for performing a parameterized query</param>
     /// <param name="connectionStringName">String indicating database connection details</param>
-    /// <param name="options"></param>
+    /// <param name="isStoredProcedure">Parameter specifying whether to execute a stored procedure</param>
     /// <typeparam name="T">Parameter(s) specified to transmit parameterized into query</typeparam>
-    public void SaveData<T>(string sql, T parameters, string connectionStringName, dynamic? options = null)
+    public void SaveData<T>(string sql, T parameters, string connectionStringName, bool isStoredProcedure = false)
     {
         string? connectionString = _config.GetConnectionString(connectionStringName);
         CommandType commandType = CommandType.Text;
         
-        if (options?.IsStoredProcedure != null && options?.IsStoredProcedure == true)
+        if (isStoredProcedure)
         {
             commandType = CommandType.StoredProcedure;
         }
