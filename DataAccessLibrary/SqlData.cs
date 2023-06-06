@@ -18,7 +18,7 @@ public class SqlData
     /// <param name="startDate">Check-in day</param>
     /// <param name="endDate">Check-out day</param>
     /// <returns>Returns a list of room types available in a given calendar date range</returns>
-    public List<RoomTypesModel> GetAvailableRoomTypes(DateOnly startDate, DateOnly endDate)
+    public List<RoomTypesModel> GetAvailableRoomTypes(DateTime startDate, DateTime endDate)
     {
         return _db.LoadData<RoomTypesModel, dynamic>("dbo.RoomTypes_GetAvailableTypes", new { startDate, endDate },
             ConnectionStringName, true);
