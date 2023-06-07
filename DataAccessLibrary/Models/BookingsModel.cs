@@ -1,8 +1,8 @@
 ﻿namespace DataAccessLibrary.Models;
 
 /// <summary>
-///     Model class that holds all the properties required to make a hotel room reservation.
-///     Contains properties from all tables in the database.
+///     Model class that holds all the properties required to display all bookings.
+///     Contains properties from all the tables in the database.
 /// </summary>
 public class BookingsModel
 {
