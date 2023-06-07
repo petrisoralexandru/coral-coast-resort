@@ -59,4 +59,16 @@ public class SqlData
             },
             ConnectionStringName, true);
     }
+
+    /// <summary>
+    ///     The method is responsible for displaying hotel room bookings based on date and first name.         
+    /// </summary>
+    /// <param name="firstName">Guest's first name</param>
+    /// <returns>Reservations for a guest on a particular day, based on first name criteria. </returns>
+    public List<BookingsModel> SearchBookings(string firstName)
+    {
+        return _db.LoadData<BookingsModel, dynamic>("dbo.Bookings_SearchBookings",
+            new { firstName, startDate = DateTime.Now.Date },
+            ConnectionStringName, true);
+    }
 }
