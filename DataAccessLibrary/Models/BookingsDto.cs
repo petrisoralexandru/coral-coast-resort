@@ -1,10 +1,10 @@
 ﻿namespace DataAccessLibrary.Models;
 
 /// <summary>
-///     Model class that holds all the properties required to display all bookings.
+///     DTO (data transfer object) that holds all the properties required to display all bookings.
 ///     Contains properties from all the tables in the database.
 /// </summary>
-public class BookingsModel
+public class BookingsDto
 {
     public int Id { get; set; }
     public int RoomId { get; set; }

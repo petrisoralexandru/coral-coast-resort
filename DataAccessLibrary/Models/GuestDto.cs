@@ -1,9 +1,9 @@
 ﻿namespace DataAccessLibrary.Models;
 
 /// <summary>
-///     Model class that holds all the properties of the hotel guest
+///     DTO (data transfer object) that holds all the properties of the hotel guest
 /// </summary>
-public class GuestModel
+public class GuestDto
 {
     public int Id { get; set; }
     public string? FirstName { get; set; }

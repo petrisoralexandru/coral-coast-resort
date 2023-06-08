@@ -1,9 +1,9 @@
 ﻿namespace DataAccessLibrary.Models;
 
 /// <summary>
-///     Model class that holds all the properties of the RoomTypes table.
+///     DTO (data transfer object) that holds all the properties of the RoomTypes table.
 /// </summary>
-public class RoomTypesModel
+public class RoomTypesDto
 {
     public int Id { get; set; }
     public string? Title { get; set; }

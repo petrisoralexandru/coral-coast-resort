@@ -10,7 +10,7 @@ public interface IDatabaseData
     /// <param name="startDate">Check-in day</param>
     /// <param name="endDate">Check-out day</param>
     /// <returns>Returns a list of room types available in a given calendar date range</returns>
-    List<RoomTypesModel> GetAvailableRoomTypes(DateTime startDate, DateTime endDate);
+    List<RoomTypesDto> GetAvailableRoomTypes(DateTime startDate, DateTime endDate);
 
     /// <summary>
     ///     The method that is responsible for booking a guest in a hotel room, based on the criteria of name, last name,
@@ -28,7 +28,7 @@ public interface IDatabaseData
     /// </summary>
     /// <param name="firstName">Guest's first name</param>
     /// <returns>Reservations for a guest on a particular day, based on first name criteria. </returns>
-    List<BookingsModel> SearchBookings(string firstName);
+    List<BookingsDto> SearchBookings(string firstName);
 
     /// <summary>
     ///     The method is responsible for confirming the guest check-in
