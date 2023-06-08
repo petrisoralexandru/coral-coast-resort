@@ -61,7 +61,7 @@ public class SqlData
     }
 
     /// <summary>
-    ///     The method is responsible for displaying hotel room bookings based on date and first name.         
+    ///     The method is responsible for displaying hotel room bookings based on date and first name.
     /// </summary>
     /// <param name="firstName">Guest's first name</param>
     /// <returns>Reservations for a guest on a particular day, based on first name criteria. </returns>
@@ -70,5 +70,14 @@ public class SqlData
         return _db.LoadData<BookingsModel, dynamic>("dbo.Bookings_SearchBookings",
             new { firstName, startDate = DateTime.Now.Date },
             ConnectionStringName, true);
+    }
+
+    /// <summary>
+    ///     The method is responsible for confirming the guest check-in
+    /// </summary>
+    /// <param name="bookingId">Booking identification number</param>
+    public void CheckInGuest(int bookingId)
+    {
+        _db.SaveData("dbo.Bookings_CheckIn", new { bookingId }, ConnectionStringName, true);
     }
 }
