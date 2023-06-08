@@ -1,6 +1,7 @@
-﻿using DataAccessLibrary.Models;
+﻿using DataAccessLibrary.Databases.SQLServer;
+using DataAccessLibrary.Models;
 
-namespace DataAccessLibrary;
+namespace DataAccessLibrary.Data;
 
 public class SqlData : IDatabaseData
 {
