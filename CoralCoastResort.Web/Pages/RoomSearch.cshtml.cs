@@ -38,6 +38,11 @@ public class RoomSearch : PageModel
 
     public IActionResult OnPost()
     {
-        return RedirectToPage(new { SearchComplete = true, StartDate, EndDate });
+        return RedirectToPage(new 
+        { 
+            SearchComplete = true, 
+            StartDate = StartDate.ToString("yyyy-MM-dd"), 
+            EndDate = EndDate.ToString("yyyy-MM-dd")
+        });
     }
 }
