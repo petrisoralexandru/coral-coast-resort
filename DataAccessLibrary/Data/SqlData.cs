@@ -41,7 +41,7 @@ public class SqlData : IDatabaseData
             .First();
 
         var roomType =
-            _db.LoadData<RoomTypesDto, dynamic>("dbo.RoomTypes_GetRoomTypeById", new { roomTypeId },
+            _db.LoadData<RoomTypesDto, dynamic>("dbo.RoomTypes_GetRoomTypeById", new { id = roomTypeId },
                 ConnectionStringName, true).First();
 
         var timeStaying = endDate.Date.Subtract(startDate.Date);
