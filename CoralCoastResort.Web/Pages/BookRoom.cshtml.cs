@@ -24,4 +24,9 @@ public class BookRoom : PageModel
     {
         
     }
+
+    public IActionResult OnPost()
+    {
+        return RedirectToPage("./Index");
+    }
 }
