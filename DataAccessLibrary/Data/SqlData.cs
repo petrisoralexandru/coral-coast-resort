@@ -81,4 +81,15 @@ public class SqlData : IDatabaseData
     {
         _db.SaveData("dbo.Bookings_CheckIn", new { bookingId }, ConnectionStringName, true);
     }
+
+    /// <summary>
+    ///     The method is responsible for retrieving a room type based on a identification number 
+    /// </summary>
+    /// <param name="id">The identification number of the room type</param>
+    /// <returns>All the details about a room type</returns>
+    public RoomTypesDto? GetRoomTypeById(int id)
+    {
+        return _db.LoadData<RoomTypesDto, dynamic>("dbo.RoomTypes_GetRoomTypeById", new { id }, ConnectionStringName,
+            true).FirstOrDefault();
+    }
 }

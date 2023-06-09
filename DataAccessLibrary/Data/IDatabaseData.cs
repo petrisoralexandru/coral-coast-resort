@@ -35,4 +35,11 @@ public interface IDatabaseData
     /// </summary>
     /// <param name="bookingId">Booking identification number</param>
     void CheckInGuest(int bookingId);
+
+    /// <summary>
+    ///     The method is responsible for retrieving a room type based on a identification number 
+    /// </summary>
+    /// <param name="id">The identification number of the room type</param>
+    /// <returns>All the details about a room type</returns>
+    RoomTypesDto? GetRoomTypeById(int id);
 }
