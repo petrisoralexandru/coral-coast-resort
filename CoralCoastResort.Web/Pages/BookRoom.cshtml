@@ -1,0 +1,23 @@
+﻿@page
+@model CoralCoastResort.Web.Pages.BookRoom
+
+@{
+    Layout = "Shared/_Layout";
+}
+
+<h1>Book a Room</h1>
+
+<h2>Room Title</h2>
+<p>Room Description</p>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="FirstName" />
+        <input asp-for="FirstName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" />
+        <input asp-for="LastName" />
+    </div>
+    <button type="submit" class="btn btn-primary">Book</button>
+</form>
