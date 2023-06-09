@@ -36,8 +36,11 @@
                         <strong>@room.Title</strong><br />
                         @room.Description
                     </td>
-                    <td>@string.Format("{0:C}", room.Price) / night</td>
-                    <td><a href="#" class="btn btn-primary">Book Now</a></td>
+                    <td>@($"{room.Price:C}") / night</td>
+                    <td><a asp-page="./BookRoom" asp-route-roomtypeid="@room.Id" 
+                           asp-route-startdate="@Model.StartDate.ToShortDateString()" 
+                           asp-route-enddate="@Model.EndDate.ToShortDateString()"
+                           class="btn btn-primary">Book Now</a></td>
                 </tr>
             }
         </tbody>
