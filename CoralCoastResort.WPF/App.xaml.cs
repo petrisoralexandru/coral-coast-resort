@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System.Data.SqlClient;
+using System.IO;
+using System.Windows;
 using DataAccessLibrary.Data;
 using DataAccessLibrary.Databases.SQLServer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -11,14 +14,25 @@ namespace CoralCoastResort.WPF;
 /// </summary>
 public partial class App : Application
 {
+    private const string ConnectionStringName = "SqlServerDB";
+    
     public App()
     {
+        IConfiguration config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+        
+        string? connectionString = config.GetConnectionString(ConnectionStringName);
+        
         AppHost = Host.CreateDefaultBuilder()
             .ConfigureServices((hostContext, services) =>
             {
                 services.AddSingleton<MainWindow>();
                 services.AddTransient<IDatabaseData, SqlData>();
                 services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+                
+                services.AddSingleton(new SqlConnection(connectionString));
             })
             .Build();
     }
