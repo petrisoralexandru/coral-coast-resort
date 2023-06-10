@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoralCoastResort.Web", "CoralCoastResort.Web\CoralCoastResort.Web.csproj", "{E5E0876C-5456-444E-89B8-B4E268D88C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoralCoastResort.WPF", "CoralCoastResort.WPF\CoralCoastResort.WPF.csproj", "{65302A6C-6AD1-4CB8-972D-12FE3D7F8249}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E5E0876C-5456-444E-89B8-B4E268D88C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E0876C-5456-444E-89B8-B4E268D88C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E0876C-5456-444E-89B8-B4E268D88C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65302A6C-6AD1-4CB8-972D-12FE3D7F8249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65302A6C-6AD1-4CB8-972D-12FE3D7F8249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65302A6C-6AD1-4CB8-972D-12FE3D7F8249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65302A6C-6AD1-4CB8-972D-12FE3D7F8249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
