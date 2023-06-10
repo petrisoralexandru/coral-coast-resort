@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using DataAccessLibrary.Data;
 
 namespace CoralCoastResort.WPF;
 
@@ -7,8 +8,11 @@ namespace CoralCoastResort.WPF;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()
+    private readonly IDatabaseData _db;
+    
+    public MainWindow(IDatabaseData db)
     {
         InitializeComponent();
+        _db = db;
     }
 }
