@@ -18,5 +18,14 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        
+        <!-- Search bookings section -->
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Search for a guest" />
+        
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+            <TextBox x:Name="lastNameText" MinWidth="200" Margin="5" />
+            <Button x:Name="searchForGuest" Margin="5" Padding="5">Search</Button>
+        </StackPanel>
+        <!-- End of the search bookings section -->
     </Grid>
 </Window>
