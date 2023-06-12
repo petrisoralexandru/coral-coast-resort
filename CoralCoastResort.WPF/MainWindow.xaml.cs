@@ -11,11 +11,13 @@ namespace CoralCoastResort.WPF;
 public partial class MainWindow : Window
 {
     private readonly IDatabaseData _db;
-    
-    public MainWindow(IDatabaseData db)
+    private readonly CheckInWindow _checkInWindow;
+
+    public MainWindow(IDatabaseData db, CheckInWindow checkInWindow)
     {
         InitializeComponent();
         _db = db;
+        _checkInWindow = checkInWindow;
     }
 
     private void SearchForGuest_OnClick(object sender, RoutedEventArgs e)

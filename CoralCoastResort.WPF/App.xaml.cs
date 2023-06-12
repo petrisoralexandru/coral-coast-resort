@@ -31,6 +31,7 @@ public partial class App : Application
                 services.AddSingleton<MainWindow>();
                 services.AddTransient<IDatabaseData, SqlData>();
                 services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+                services.AddTransient<CheckInWindow>();
                 
                 services.AddSingleton(new SqlConnection(connectionString));
             })
