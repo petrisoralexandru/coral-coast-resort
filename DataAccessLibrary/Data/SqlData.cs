@@ -65,7 +65,7 @@ public class SqlData : IDatabaseData
     ///     The method is responsible for displaying hotel room bookings based on date and first name.
     /// </summary>
     /// <param name="firstName">Guest's first name</param>
-    /// <returns>Reservations for a guest on a particular day, based on first name criteria. </returns>
+    /// <returns>Reservations for a guest on today date, based on first name criteria.</returns>
     public List<BookingsDto> SearchBookings(string firstName)
     {
         return _db.LoadData<BookingsDto, dynamic>("dbo.Bookings_SearchBookings",
